@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 
+# Library
+import send_mail
+
 # Python
 import logging
 import sys
+import pickle
 
 # LogMeIn API
 from lmiapi_interface import LogMeInAPI
@@ -26,6 +30,7 @@ api = LogMeInAPI(auth)
 
 # Get host ID/description for all hosts.
 # print api.hosts()
+
 
 # Get list of hardware report fields.
 # print api.hardware_fields()
@@ -74,9 +79,14 @@ for machine_name in computers:
 	string_id=str(machine_name["id"])
 	if string_id in host_ids:
 		machines_report[machine_name["description"]]=operating_systems[host_ids.index(string_id)]
-		
-print machines_report
 
+# Writes to a file in reports dir	
+# f=open('reports\master_report.txt', 'w')
+# f.write(str(machines_report))
+# f.close()
 
+pickle.dump(machines_report, open('reports\master_report.txt', 'wb'))
+
+text_db_dict=pickle.load(open('reports\master_report.txt', 'rb'))
 
 
