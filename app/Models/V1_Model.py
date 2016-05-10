@@ -65,7 +65,7 @@ class LogMeInAPI(object):
     def _get(self, path):
         url = '%s%s' % (self.API_ROOT, path.lstrip('/'))
         response = self.session.get(url)
-        #logger.debug('GET %s -> %d', url, response.status_code)
+        # logger.debug('GET %s -> %d', url, response.status_code)
         return response.json()
 
     def _post(self, path, data):
