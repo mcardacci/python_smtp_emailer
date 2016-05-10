@@ -17,9 +17,9 @@ class OS_Report_Controller(object):
 		if mailer_obj is None:
 			self.mailer_obj=Mailer(
 				"Operating System Updates",
-				"marcoc@ticketech.com",
-				"ticketechtest@gmail.com",
-				'locationswithpendingfiles'
+				"Email To Address",
+				"Email From Address",
+				"Password to 'To Address' account"
 				) 
 		else:
 			self.mailer_obj=mailer_obj
