@@ -9,6 +9,7 @@ The application leverages the Logmein API and Python's Mailer library.
 * This application requires:
   * Python 2.7.11
   * Logmein credentials
+
 ## How to Run Tests
 ---
 Navigate to the root directory and leverage python's 'discover' feature while in the command line.
