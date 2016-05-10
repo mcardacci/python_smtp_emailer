@@ -26,20 +26,3 @@ class Format(object):
 			return formatted_email
 		else:
 			return "No machines have been added, No Operating Systems have been changed."
-
-
-
-
-#-------------------TESTING----------------------------
-# rep=Report([],[],[],{})
-
-# logging.basicConfig(level=logging.DEBUG,
-#                     format='%(levelname)-8s %(name)s:%(message)s')
-
-# auth = file('auth.txt').read()
-# api = LogMeInAPI(auth)
-
-#-----------os_report TESTING---------------------------
-# Real args for Format instantiation: rep.compare_reports(api.hosts(),api.system_report()
-# f=Format(rep.compare_reports(api.hosts(),api.system_report()))
-# print f.os_report()
