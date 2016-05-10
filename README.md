@@ -1,7 +1,20 @@
-# Logmein API Interface
+# Mailer Report Tool
 ---
-This is a python interface for version 1 of the Logmein API
+This is a tool that leverages the Logmein API and Python's Mailer library.
+
+## Purpose and Dependencies
+---
+* The purpose of this project was to learn Python and build a tool that allows my company to track their hardware across the vast net of their machines nationwide.
+* They use this data to ensure accounting and security information is up to date.
 * This application requires at least Python 2.7.11
+
+## How to Run Tests
+---
+Navigate to the root directory and leverage python's 'discover' feature while in the command line.
+```
+$ python -m unittest discover -v
+``` 
+It should run the tests automatically.
 
 ## How to pass credentials
 ---
@@ -11,13 +24,12 @@ auth = {'companyId': <int>(company_id), 'psk': <string>(passkey)}
 api = LogMeInAPI(auth)
 ```
 
-#### Option 2: Pass the content of the credentials file provided by LogMeIn.
-```python
-auth = file('auth.txt').read()
-api = LogMeInAPI(auth)
+#### Option 2: Create a text file called 'auth.txt' and pass in the credentials file name directly. The text file should read:
 ```
-
-#### Option 3: Pass in the credentials file name directly.
+CID:  "ID without quotes"
+PSK:  "Passkey without quotes"
+```
+Then in start.py:
 ```python
 api = LogMeInAPI('auth.txt')
 ```
@@ -55,11 +67,4 @@ print api.hardware_report()
 print api.system_report()
 ```
 
-## How to Run Tests
----
-Navigate to the root directory and leverage python's 'discover' feature while in the command line.
-```
-$ python -m unittest discover -v
-``` 
-It should run the tests automatically.
 
