@@ -7,8 +7,8 @@ The application leverages the Logmein API and Python's Mailer library.
 * The purpose of this project was to learn Python and build a tool that allows my company to track their hardware across the vast net of their machines nationwide.
 * They use this data to ensure accounting and security information is up to date.
 * This application requires:
-  ** Python 2.7.11
-  ** Logmein credentials
+⋅⋅* Python 2.7.11
+⋅⋅* Logmein credentials
 ## How to Run Tests
 ---
 Navigate to the root directory and leverage python's 'discover' feature while in the command line.
