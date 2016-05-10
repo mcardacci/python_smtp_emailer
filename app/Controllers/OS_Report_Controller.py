@@ -31,6 +31,7 @@ class OS_Report_Controller(object):
 		dirty_dict=pickle.load(open("reports/"+dir_list[-1], 'rb'))
 
 		for machine_name in dirty_dict:
+			# else conditional is necessary bc you can't strip a 'None' type
 			type_and_installdate={key.strip() : val.strip() if val!=None else val for key,val in dirty_dict[machine_name].items()}
 			clean_dict[machine_name.strip()]=type_and_installdate
 		return clean_dict
@@ -64,10 +65,9 @@ class OS_Report_Controller(object):
 		mailer=self.mailer_obj
 		# Serialize new report if machines_to_be_mailed is populated
 		self.store_report(machines_to_be_mailed,new_report)
-		# init Format object
+		# init Format (change new_report to machines_to_be_mailed below for intended use)
 		formatter=Format(new_report)
 		# Make dict pretty for email
 		os_report=formatter.os_report()
 		# Mailer object sends os report
 		return mailer.send(os_report)
-

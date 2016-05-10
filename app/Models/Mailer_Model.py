@@ -28,11 +28,3 @@ class Mailer(object):
 		text=msg.as_string()
 		mail.sendmail(self.from_address,self.to_address,text)
 		mail.close()
-
-#--------------------------TESTING----------------------------------------------------
-
-# ttmailer=Mailer("Operating System Updates","marcoc@ticketech.com","ticketechtest@gmail.com",'locationswithpendingfiles')
-
-# dic={u'hosts': [{u'description': u'MAURICIOC-TKTWIN7', u'id': 1009946249}, {u'description': u'MAURICIO-WIN7-HOME', u'id': 1010104408}, {u'description': u'MAM031-S', u'id': 1011902330}, {u'description': u'SPN200-S', u'id': 1012139205}]}
-
-# ttmailer.send(dic)

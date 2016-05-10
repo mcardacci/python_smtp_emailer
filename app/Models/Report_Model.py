@@ -63,34 +63,3 @@ class Report(object):
 			elif master_report[machine_name] != os:
 				machines_to_be_mailed[machine_name]=os
 		return machines_to_be_mailed
-
-
-#--------------------TESTING-----------------------------
-# rep=Report([],[],[],{})
-
-# logging.basicConfig(level=logging.DEBUG,
-#                     format='%(levelname)-8s %(name)s:%(message)s')
-
-# auth = file('.auth.txt').read()
-# api = LogMeInAPI(auth)
-
-# ---------------FUNCTION TESTING------------------------------------------------------------
-# print rep.grab_OSes(api.system_report())
-# print rep.grab_machine_names(api.hosts())
-# print rep.get_new_report(api.hosts(),api.system_report())
-
-# os_report=rep.compare_reports(api.hosts(),api.system_report())
-# print rep.store_report(os_report)
-
-#---------------check if new_master_report.txt is right---------------------------------------
-# new_master_report=rep.clean_data(pickle.load(open("reports/new_master_report.txt", 'rb')))
-# print new_master_report
-
-# ------------------sys_command testing--------------------------------------------------------
-# print "waiting 10 secs"
-# sys_command('ping localhost -n 10 >NUL')
-
-# -------------------------------clean_data function testing------------------------------------
-# master_report=pickle.load(open("reports/master_report.txt", 'rb'))
-# print rep.clean_data(master_report)
-
