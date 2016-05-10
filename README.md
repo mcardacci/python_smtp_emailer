@@ -1,6 +1,6 @@
 # Mailer Report Tool
 ---
-The application leverages the Logmein API and Python's Mailer library.
+The application leverages the LogMeIn API and Python's Mailer library.
 
 ## Purpose and Dependencies
 ---
@@ -8,7 +8,7 @@ The application leverages the Logmein API and Python's Mailer library.
 * They use this data to ensure accounting and security information is up to date.
 * This application requires:
   * Python 2.7.11
-  * Logmein credentials
+  * LogMeIn credentials
 
 ## How to Run Tests
 ---
@@ -18,7 +18,7 @@ $ python -m unittest discover -v
 ``` 
 It should run the tests automatically.
 
-## How to pass credentials
+## How to pass LogMeIn credentials
 ---
 #### Option 1: Pass credentials as a dictionary.
 ```python
@@ -41,6 +41,13 @@ Check that credentials work to authenticate.
 ```python
 print api.authentication()
 ```
+
+## Where to put email credentials in?
+* Go to app/Controllers/OS_ReportController.py
+* Inside the '__init__' function where 'self.mailer_obj=' put in your:
+  * To address
+  * From address
+  * Password to 'To Address' account
 
 ## Example API Interface calls
 ---
